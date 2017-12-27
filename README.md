@@ -1,3 +1,26 @@
+## bus_server (kinetic) - 0.1.1-0
+
+The packages in the `bus_server` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release bus_server --track kinetic --rosdistro kinetic` on `Wed, 27 Dec 2017 18:34:07 -0000`
+
+The `bus_server` package was released.
+
+Version of package(s) in repository `bus_server`:
+
+- upstream repository: https://github.com/UbiquityRobotics/bus_server.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.1.1-0`
+
+Versions of tools used:
+
+- bloom version: `0.6.1`
+- catkin_pkg version: `0.3.9`
+- rosdep version: `0.11.8`
+- rosdistro version: `0.6.2`
+- vcstools version: `0.1.39`
+
+
 ## bus_server (indigo) - 0.1.1-0
 
 The packages in the `bus_server` repository were released into the `indigo` distro by running `/usr/bin/bloom-release bus_server --track indigo --rosdistro indigo --edit` on `Thu, 14 Apr 2016 17:17:54 -0000`

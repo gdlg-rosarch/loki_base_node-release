@@ -38,12 +38,12 @@ tracks:
       :{release_inc}
     devel_branch: indigo
     last_version: 0.1.1
-    name: bus_server
+    name: loki_base_node
     patches: null
     release_inc: '0'
-    release_repo_url: git@github.com:UbiquityRobotics-release/bus_server-release.git
+    release_repo_url: git@github.com:UbiquityRobotics-release/loki_base_node-release.git
     release_tag: :{version}
     ros_distro: kinetic
     vcs_type: git
-    vcs_uri: https://github.com/UbiquityRobotics/bus_server.git
+    vcs_uri: https://github.com/UbiquityRobotics/loki_base_node.git
     version: :{auto}

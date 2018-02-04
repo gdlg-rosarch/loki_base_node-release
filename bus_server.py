@@ -154,6 +154,10 @@ class Bus_Server:
 	self.cmd_vel_ = Twist()
 	self.cmd_vel_pub_ = rospy.Publisher("cmd_vel", Twist, queue_size=5)
 
+	# Create multi sonar topic - all sonars are published on this topic
+	# as well as their individual topics
+	self.sonar_pub_ = rospy.Publisher("sonars", Range, queue_size=5)
+
 	# Subscribe to *cmd_vel* topic:
 	self.cmd_vel_enabled_ = True
 	rospy.Subscriber("cmd_vel", Twist, self.cmd_vel_callback)
@@ -203,7 +207,7 @@ class Bus_Server:
 
 		# We have sonar, so grab the additional fields and create
 		# the *Sonar* object:
-		sensor = Sonar_Sensor(name,
+		sensor = Sonar_Sensor(name, self.sonar_pub_,
 		  Sensor.SONAR_TYPE, sensor_id, frame_id,
 		  field_of_view = field_of_view,
 		  min_range = min_range,
@@ -744,7 +748,7 @@ class Encoder_Sensor(Sensor):
 	    dead_reckon.right_encoder_set(value, time)
 
 class Sonar_Sensor(Sensor):
-    def __init__(self, name, sensor_type, sensor_id, frame_id,
+    def __init__(self, name, publisher, sensor_type, sensor_id, frame_id,
       field_of_view, min_range, max_range):
 	""" *Sonar_Sensor*: Initialize a *Sonar_Sensor* to contain *name*,
 	    *sensor_id*, *frame_id*, *field_of_view*, *min_range*, *max_range*.
@@ -764,8 +768,11 @@ class Sonar_Sensor(Sensor):
 	self.min_range_ = min_range
 	self.max_range_ = max_range
 	self.msg_ = msg = Range()
-	self.pub_ = rospy.Publisher("~sensor/{0}".format(name),
-	  Range, queue_size=5)
+	# Topic for all sonars
+	self.multi_pub_ = publisher
+	# Topic for this sensor only
+	self.single_pub_ = rospy.Publisher("~sensor/{0}".format(name),
+	    Range, queue_size=5)
 
 	# Initialize *msg* a little more:
 	msg.header.frame_id = frame_id
@@ -803,7 +810,8 @@ class Sonar_Sensor(Sensor):
 	msg.header.stamp = time
 
 	# Publish *msg*:
-	self.pub_.publish(msg)
+	self.single_pub_.publish(msg)
+	self.multi_pub_.publish(msg)
 
 # Fire off the program:
 if __name__ == '__main__':

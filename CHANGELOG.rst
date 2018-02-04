@@ -2,6 +2,11 @@
 Changelog for package bus_server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.2 (2018-02-04)
+------------------
+* Publish all sonars on a single topic /sonars, in addition to individual topics
+* Contributors: Jim Vaughan
+
 0.2.1 (2017-12-30)
 ------------------
 * fix cmake error from rename

@@ -1,3 +1,26 @@
+## loki_base_node (kinetic) - 0.2.2-0
+
+The packages in the `loki_base_node` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release --track kinetic --rosdistro kinetic loki_base_node` on `Sun, 04 Feb 2018 20:46:12 -0000`
+
+The `loki_base_node` package was released.
+
+Version of package(s) in repository `loki_base_node`:
+
+- upstream repository: https://github.com/UbiquityRobotics/loki_base_node.git
+- release repository: https://github.com/UbiquityRobotics-release/loki_base_node-release.git
+- rosdistro version: `0.2.1-0`
+- old version: `0.2.1-0`
+- new version: `0.2.2-0`
+
+Versions of tools used:
+
+- bloom version: `0.6.2`
+- catkin_pkg version: `0.4.1`
+- rosdep version: `0.11.8`
+- rosdistro version: `0.6.6`
+- vcstools version: `0.1.40`
+
+
 ## loki_base_node (kinetic) - 0.2.1-0
 
 The packages in the `loki_base_node` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release --rosdistro kinetic --track kinetic loki_base_node` on `Sat, 30 Dec 2017 18:21:09 -0000`
